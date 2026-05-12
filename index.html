@@ -526,10 +526,14 @@
         headers: { Accept: "application/json" }
       });
       if (res.ok) {
-        this.style.display = "none";
-        document.getElementById("form-ok").style.display = "block";
-        if (typeof fbq !== "undefined") fbq("track", "Lead");
-      } else {
+  this.style.display = "none";
+  document.getElementById("form-ok").style.display = "block";
+  if (typeof fbq !== "undefined") fbq("track", "Lead");
+
+  setTimeout(() => {
+    window.location.href = "https://wa.me/923333226024?text=Hi I just submitted form";
+  }, 2000);
+} else {
         btn.textContent = "Submit Booking Interest"; btn.disabled = false;
         alert("Error. Please WhatsApp +92 333 322 6024 directly.");
       }
